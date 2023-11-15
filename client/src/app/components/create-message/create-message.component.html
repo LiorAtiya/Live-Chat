@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()" *ngIf="userId; else pleaseRegister">
+  <div class="form-control">
+    <label for="text">Message</label>
+    <br />
+    <input
+      type="text"
+      name="firstName"
+      id="firstName"
+      [(ngModel)]="message"
+      placeholder="First Name"
+    />
+  </div>
+  <input type="submit" value="Submit" class="btn" />
+</form>
+<ng-template #pleaseRegister>
+  <div class="list-group-item">
+    <h1>Please Register First</h1>
+  </div>
+</ng-template>

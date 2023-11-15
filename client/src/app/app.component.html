@@ -1,0 +1,21 @@
+<h1 class="title">{{ title }}</h1>
+<div class="container">
+  <div class="left">
+    <app-register (onRegister)="registerUser($event, 'left')"></app-register>
+    <app-chat-list [userId]="rightUserId$ | async"></app-chat-list>
+    <app-create-message [userId]="leftUserId$ | async"></app-create-message>
+  </div>
+  <div class="right">
+    <app-register (onRegister)="registerUser($event, 'right')"></app-register>
+    <app-chat-list [userId]="leftUserId$ | async"></app-chat-list>
+    <app-create-message [userId]="rightUserId$ | async"></app-create-message>
+  </div>
+</div>
+
+<!-- <button (click)="increment()">Increment</button>
+
+<div>Current Count: {{ count$ | async }}</div>
+
+<button (click)="decrement()">Decrement</button>
+
+<button (click)="reset()">Reset Counter</button> -->
